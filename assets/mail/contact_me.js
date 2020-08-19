@@ -21,7 +21,7 @@ $(function () {
             $this = $("#sendMessageButton");
             $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
             $.ajax({
-                url: "https://correo-portfolio-back.notasalmargen.net",
+                url: "https://correo-portfolio.herokuapp.com",
                 type: "POST",
                 data: {
                     name: name,
