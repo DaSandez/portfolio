@@ -26,6 +26,8 @@ contactForm.addEventListener("submit", async (e)=>{
             "Content-Type": "multipart/form-data"
         },
         body: formData
-    });
-    console.log(response);
+    })
+    .then(res => res.ok ? Promise.resolve(res) : Promise.rejert(res))
+    .then(res => console.log(res));
+ 
 })
