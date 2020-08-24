@@ -23,14 +23,14 @@ $(function () {
             $.ajax({
                 url: "https://notasalmargen.net/portfolio-mail-back",
                 type: "POST",
-                data: {
+                data: JSON.stringify({
                     name: name,
                     phone: phone,
                     email: email,
                     message: message,
-                },
+                }),
                 cache: false,
-                success: function () {
+                success: function (res) {
                     // Success message
                     $("#success").html("<div class='alert alert-success'>");
                     $("#success > .alert-success")
@@ -44,8 +44,9 @@ $(function () {
                     $("#success > .alert-success").append("</div>");
                     //clear all fields
                     $("#contactForm").trigger("reset");
+                    console.log(res);
                 },
-                error: function () {
+                error: function (error) {
                     // Fail message
                     $("#success").html("<div class='alert alert-danger'>");
                     $("#success > .alert-danger")
@@ -63,6 +64,7 @@ $(function () {
                     $("#success > .alert-danger").append("</div>");
                     //clear all fields
                     $("#contactForm").trigger("reset");
+                    console.error(error);        
                 },
                 complete: function () {
                     setTimeout(function () {
