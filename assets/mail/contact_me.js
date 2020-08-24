@@ -21,7 +21,7 @@ $(function () {
             $this = $("#sendMessageButton");
             $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
             $.ajax({
-                url: "https://notasalmargen.net/portfolio-mail-back",
+                url: "http://cors.io/?https://notasalmargen.net/portfolio-mail-back",
                 type: "POST",
                 data: `name=${name}&email=${email}&phone=${phone}&message=${message}`//{
                     /* name: name,
