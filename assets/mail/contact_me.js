@@ -23,12 +23,13 @@ $(function () {
             $.ajax({
                 url: "https://notasalmargen.net/portfolio-mail-back",
                 type: "POST",
-                data: JSON.stringify({
+                data: {
                     name: name,
                     phone: phone,
                     email: email,
                     message: message,
-                }),
+                },
+                crossDomain: true,
                 cache: false,
                 success: function (res) {
                     // Success message
