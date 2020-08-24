@@ -29,6 +29,9 @@ $(function () {
                     email: email,
                     message: message,
                 },
+                headers: {
+                    "Content-Type": "multipart/form-data"
+                },
                 crossDomain: true,
                 cache: false,
                 success: function (res) {
